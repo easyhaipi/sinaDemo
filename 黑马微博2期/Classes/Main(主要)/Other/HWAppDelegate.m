@@ -23,12 +23,14 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
+     [self.window switchRootViewController];
+    
     // 2.设置根控制器
     HWAccount *account = [HWAccountTool account];
     if (account) { // 之前已经登录成功过
         [self.window switchRootViewController];
     } else {
-        self.window.rootViewController = [[HWOAuthViewController alloc] init];
+//        self.window.rootViewController = [[HWOAuthViewController alloc] init];
     }
     
     // 3.显示窗口
